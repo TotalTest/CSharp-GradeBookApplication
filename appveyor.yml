@@ -13,10 +13,11 @@ dotnet_csproj:
   assembly_version: '{version}'
   file_version: '{version}'
   informational_version: '{version}'
+before_build:
+- cmd: dotnet restore GradeBook.sln
 environment:
   testing: test
 build:
-  project: GradeBook.sln
   verbosity: minimal
 notifications:
 - provider: Webhook
