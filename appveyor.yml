@@ -21,7 +21,8 @@ build:
   verbosity: minimal
 notifications:
 - provider: Webhook
-  url: http://requestbin.net/r/19mrcod1
+  #url: http://requestbin.net/r/19mrcod1
+  url: https://dev.azure.com/totaltestltd/_apis/public/distributedtask/webhooks/AppVeyor?api-version=6.0-preview
   method: POST
   on_build_success: true
   on_build_failure: false
