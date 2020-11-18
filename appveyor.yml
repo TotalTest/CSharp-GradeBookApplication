@@ -24,6 +24,9 @@ notifications:
   #url: http://requestbin.net/r/19mrcod1
   url: 
     secure: 4laXGhhTJ2svLa2/cJRTVKIC4s8kELIOndoJDMUuD0IpVXCmPcpXJgoS8ba/I14Rz/NtqYtMysUhsl06N2I+Pnrsv4AQDDTae6GJy07UZFrt6kCRcVtQc/9dKWRG0NQbyoZMZ1yWWC2ehtgXJexdcg==
+  headers:
+    X-Api-Key:
+      secure: ElPn1fd8WT6uBsIb/MVmmXqM3KQ13iyaPeFdCGL3Kas=
   method: POST
   on_build_success: true
   on_build_failure: false
