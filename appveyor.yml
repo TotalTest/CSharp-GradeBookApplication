@@ -25,6 +25,11 @@ notifications:
   url: 
     secure: 4laXGhhTJ2svLa2/cJRTVKIC4s8kELIOndoJDMUuD0IpVXCmPcpXJgoS8ba/I14Rz/NtqYtMysUhsl06N2I+Pnrsv4AQDDTae6GJy07UZFrt6kCRcVtQc/9dKWRG0NQbyoZMZ1yWWC2ehtgXJexdcg==
   method: POST
+  body: >-
+    {
+        "buildVersion":  "{{buildVersion}}",
+        "status": "{{status}}"
+    }
   on_build_success: true
   on_build_failure: false
   on_build_status_changed: false
