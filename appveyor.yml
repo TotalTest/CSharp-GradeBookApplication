@@ -30,8 +30,8 @@ notifications:
     {
         "buildVersion":  "{{buildVersion}}",
         "status": "{{status}}",
-        "var": "$env:testing",
-        "az": $env:azure
+        "var": "$testing",
+        "az": $azure
     }
   on_build_success: true
   on_build_failure: false
