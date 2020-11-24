@@ -15,9 +15,8 @@ dotnet_csproj:
   informational_version: '{version}'
 before_build:
 - cmd: dotnet restore GradeBook.sln
-environment:
-  testing: test
-  azure: yo
+testing: test
+azure: yo
 build:
   verbosity: minimal
 notifications:
@@ -30,8 +29,8 @@ notifications:
     {
         "buildVersion":  "{{buildVersion}}",
         "status": "{{status}}",
-        "var": "$testing",
-        "az": $azure
+        "var": "{{testing}}",
+        "az": '{{azure}}'
     }
   on_build_success: true
   on_build_failure: false
