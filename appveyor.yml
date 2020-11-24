@@ -23,8 +23,8 @@ build:
 notifications:
 - provider: Webhook
   #url: http://requestbin.net/r/1q07eaw1
-  url: https://dev.azure.com/totaltestltd/_apis/public/distributedtask/webhooks/AppVeyor
-    #secure: 4laXGhhTJ2svLa2/cJRTVKIC4s8kELIOndoJDMUuD0IpVXCmPcpXJgoS8ba/I14Rz/NtqYtMysUhsl06N2I+Pnrsv4AQDDTae6GJy07UZFrt6kCRcVtQc/9dKWRG0NQbyoZMZ1yWWC2ehtgXJexdcg==
+  url:
+    secure: 4laXGhhTJ2svLa2/cJRTVKIC4s8kELIOndoJDMUuD0IpVXCmPcpXJgoS8ba/I14Rz/NtqYtMysUhsl06N2I+Pnrsv4AQDDTae6GJy07UZFrt6kCRcVtQc/9dKWRG0NQbyoZMZ1yWWC2ehtgXJexdcg==
   method: POST
   body: >-
     {
