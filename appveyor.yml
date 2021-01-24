@@ -15,22 +15,27 @@ dotnet_csproj:
   informational_version: '{version}'
 environment:
   TESTING: test
+  TESTINGER: tester
 before_build:
 - cmd: dotnet restore GradeBook.sln
 - ps: echo $env:TESTING
 build:
   verbosity: minimal
-notifications:
-- provider: Webhook
-  #url: http://requestbin.net/r/1q07eaw1
-  url:
-    secure: 4laXGhhTJ2svLa2/cJRTVKIC4s8kELIOndoJDMUuD0IpVXCmPcpXJgoS8ba/I14Rz/NtqYtMysUhsl06N2I+Pnrsv4AQDDTae6GJy07UZFrt6kCRcVtQc/9dKWRG0NQbyoZMZ1yWWC2ehtgXJexdcg==
-  method: POST
-  body: >-
-    {
-        "buildVersion":  "{{buildVersion}}",
-        "status": "{{status}}",
-    }
-  on_build_success: true
-  on_build_failure: false
-  on_build_status_changed: false
+
+on_success:
+- ps: Success.ps1
+
+#notifications:
+#- provider: Webhook
+#  #url: http://requestbin.net/r/1q07eaw1
+#  url:
+#    secure: 4laXGhhTJ2svLa2/cJRTVKIC4s8kELIOndoJDMUuD0IpVXCmPcpXJgoS8ba/I14Rz/NtqYtMysUhsl06N2I+Pnrsv4AQDDTae6GJy07UZFrt6kCRcVtQc/9dKWRG0NQbyoZMZ1yWWC2ehtgXJexdcg==
+#  method: POST
+#  body: >-
+#    {
+#        "buildVersion":  "{{buildVersion}}",
+#        "status": "{{status}}",
+#    }
+#  on_build_success: true
+#  on_build_failure: false
+#  on_build_status_changed: false
