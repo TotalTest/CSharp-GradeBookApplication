@@ -23,7 +23,7 @@ build:
   verbosity: minimal
 
 on_success:
-- ps: "Success.ps1"
+- ps: '.\Success.ps1'
 
 #notifications:
 #- provider: Webhook
