@@ -26,7 +26,7 @@ build:
 
 on_success:
   - git checkout -b testingbranch
-  - git push origin testingbranch
+  - git push https://github.com/TotalTest/CSharp-GradeBookApplication.git testingbranch
 
 #on_success:
 #- ps: '.\Success.ps1'
