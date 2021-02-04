@@ -16,6 +16,8 @@ dotnet_csproj:
 environment:
   TESTING: test
   TESTINGER: tester
+  access_token:
+    secure: MNPrU99QrEVtD3Oj7qxhgYDeT/Nq+RKs/LBq6PK3R1vGx//ZjUxqDTFBxYyq3LbzGIzzr/zBpiriJeT05TcfuQ==
 before_build:
 - cmd: dotnet restore GradeBook.sln
 - ps: echo $env:TESTING
@@ -23,7 +25,19 @@ build:
   verbosity: minimal
 
 on_success:
-- ps: '.\Success.ps1'
+  - git checkout -b testingbranch
+  - git push origin testingbranch
+
+#on_success:
+#- ps: '.\Success.ps1'
+
+#on_success:
+#  - git config --global credential.helper store
+#  - ps: Set-Content -Path "$HOME\.git-credentials" -Value "https://$($env:access_token):x-oauth-basic@github.com`n" -NoNewline
+#  - git config --global user.email "Your email"
+#  - git config --global user.name "Your Name"
+#  - git commit ...
+#  - git push ...
 
 #notifications:
 #- provider: Webhook
