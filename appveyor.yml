@@ -25,7 +25,7 @@ build:
   verbosity: minimal
 
 on_success:
-  - git testingbranch
+  - git checkout testingbranch
   - git push testingbranch
 
 #on_success:
