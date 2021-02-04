@@ -25,8 +25,8 @@ build:
   verbosity: minimal
 
 on_success:
-  - git branch
-#  - git push https://github.com/TotalTest/CSharp-GradeBookApplication.git testingbranch
+  - git testingbranch
+  - git push testingbranch
 
 #on_success:
 #- ps: '.\Success.ps1'
