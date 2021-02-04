@@ -24,12 +24,12 @@ before_build:
 build:
   verbosity: minimal
 
-#on_success:
-#  - git checkout -b testingbranch
+on_success:
+  - git branch
 #  - git push https://github.com/TotalTest/CSharp-GradeBookApplication.git testingbranch
 
-on_success:
-- ps: '.\Success.ps1'
+#on_success:
+#- ps: '.\Success.ps1'
 
 #on_success:
 #  - git config --global credential.helper store
