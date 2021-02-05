@@ -25,8 +25,9 @@ build:
   verbosity: minimal
 
 on_success:
-  - git checkout -b testingbranch
-  - git push testingbranch
+  - git remote -v
+  #- git checkout -b testingbranch
+  #- git push testingbranch
 
 #on_success:
 #- ps: '.\Success.ps1'
