@@ -33,7 +33,7 @@ build:
 
 on_success:
   - git config --global credential.helper store
-  - ps: Set-Content -Path "$HOME\.git-credentials" -Value "https://$($env:access_token):x-oauth-basic@totaltestltd.visualstudio.com/`n" -NoNewline
+  - ps: Set-Content -Path "$HOME\.git-credentials" -Value "https://$($env:access_token):x-oauth-basic@visualstudio.com/`n" -NoNewline
   - git config --global user.email "prab@totaltestltd.co.uk"
   - git config --global user.name "Prab"
   - git clone https://totaltestltd@dev.azure.com/totaltestltd/Total%20Test/_git/AtataPoc
