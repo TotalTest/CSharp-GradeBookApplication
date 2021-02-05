@@ -41,6 +41,7 @@ on_success:
   - cd C:\projects\atata
   - git branch
   - git checkout -b testb
+  - git remote -v
   - git push https://($env:access_token)@dev.azure.com/totaltestltd/SampleProject/_git/SampleProject testb
 
 #on_success:
