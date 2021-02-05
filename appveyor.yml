@@ -37,7 +37,7 @@ on_success:
   - ps: Set-Content -Path "$HOME\.git-credentials" -Value "https://$($env:access_token)@dev.azure.com/totaltestltd/Total%20Test/_git/AtataPoc/`n" -NoNewline
   - git config --global user.email "prab@totaltestltd.co.uk"
   - git config --global user.name "Prab"
-  - git clone https://7zoj7msfjzews5kkjrwd3gu65i4ldvqmnr3d34tfrtvpvhqo7xqq@dev.azure.com/totaltestltd/SampleProject/_git/SampleProject
+  #- git clone https://($env:access_token)@dev.azure.com/totaltestltd/SampleProject/_git/SampleProject
   - git branch
 
 #on_success:
