@@ -39,10 +39,11 @@ on_success:
   #- git config --global user.name "Prab"
   - git clone https://($env:access_token)@dev.azure.com/totaltestltd/SampleProject/_git/SampleProject C:\projects\atata
   - cd C:\projects\atata
+  - git remote remove origin
+  - git remote add origin https://($env:access_token)@dev.azure.com/totaltestltd/SampleProject/_git/SampleProject
   - git branch
   - git checkout -b testb
-  - git remote -v
-  - git push https://($env:access_token)@dev.azure.com/totaltestltd/SampleProject/_git/SampleProject testb
+  - git push -u origin --all
 
 #on_success:
 #  # Switch branches to gh-pages, clean the folder, copy everything in from the Wyam output, and commit/push
