@@ -40,6 +40,8 @@ on_success:
   - git clone https://($env:access_token)@dev.azure.com/totaltestltd/SampleProject/_git/SampleProject C:\projects\atata
   - cd C:\projects\atata
   - git branch
+  - git checkout -b testb
+  - git push -u origin test
 
 #on_success:
 #  # Switch branches to gh-pages, clean the folder, copy everything in from the Wyam output, and commit/push
