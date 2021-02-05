@@ -25,9 +25,8 @@ build:
   verbosity: minimal
 
 on_success:
-  - git remote show origin
-  #- git checkout -b testingbranch
-  #- git push testingbranch
+  - git checkout -b testingbranch
+  - git push -u testingbranch
 
 #on_success:
 #- ps: '.\Success.ps1'
