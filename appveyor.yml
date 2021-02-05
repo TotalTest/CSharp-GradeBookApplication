@@ -28,16 +28,15 @@ build:
 #  - git checkout -b testingbranch
 #  - git push -u testingbranch
 
-on_success:
-- ps: '.\Success.ps1'
-
 #on_success:
-#  - git config --global credential.helper store
-#  - ps: Set-Content -Path "$HOME\.git-credentials" -Value "https://$($env:access_token):x-oauth-basic@github.com`n" -NoNewline
-#  - git config --global user.email "Your email"
-#  - git config --global user.name "Your Name"
-#  - git commit ...
-#  - git push ...
+#- ps: '.\Success.ps1'
+
+on_success:
+  - git config --global credential.helper store
+  - ps: Set-Content -Path "$HOME\.git-credentials" -Value "https://$($env:access_token):https://totaltestltd.visualstudio.com/`n" -NoNewline
+  - git config --global user.email "prab@totaltestltd.co.uk"
+  - git config --global user.name "Prab"
+  - git clone https://totaltestltd@dev.azure.com/totaltestltd/Total%20Test/_git/AtataPoc
 
 
 #on_success:
