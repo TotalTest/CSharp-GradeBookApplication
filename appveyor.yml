@@ -33,14 +33,14 @@ build:
 #- ps: '.\Success.ps1'
 
 on_success:
-  #- git config --global credential.helper store
-  #- ps: Set-Content -Path "$HOME\.git-credentials" -Value "https://$($env:access_token)@dev.azure.com/totaltestltd/SampleProject/_git/SampleProject/`n" -NoNewline
-  #- git config --global user.email "prab@totaltestltd.co.uk"
-  #- git config --global user.name "Prab"
-  - git clone https://($env:access_token)@dev.azure.com/totaltestltd/SampleProject/_git/SampleProject C:\projects\atata
-  - cd C:\projects\atata
+  - git config --global credential.helper store
+  - ps: Set-Content -Path "$HOME\.git-credentials" -Value "https://$($env:access_token)@dev.azure.com/totaltestltd/SampleProject/_git/SampleProject/`n" -NoNewline
+  - git config --global user.email "prab@totaltestltd.co.uk"
+  - git config --global user.name "Prab"
   - git remote remove origin
   - git remote add origin https://($env:access_token)@dev.azure.com/totaltestltd/SampleProject/_git/SampleProject
+  - git clone https://($env:access_token)@dev.azure.com/totaltestltd/SampleProject/_git/SampleProject C:\projects\atata
+  - cd C:\projects\atata
   - git branch
   - git checkout -b testb
   - git push -u origin --all
