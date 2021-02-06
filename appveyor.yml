@@ -14,13 +14,13 @@ dotnet_csproj:
   file_version: '{version}'
   informational_version: '{version}'
 environment:
-  APPVEYOR_RDP_PASSWORD: Qwert1!
+  APPVEYOR_RDP_PASSWORD: QWerty1!
   TESTING: test
   TESTINGER: tester
   access_token:
     secure: MNPrU99QrEVtD3Oj7qxhgYDeT/Nq+RKs/LBq6PK3R1vGx//ZjUxqDTFBxYyq3LbzGIzzr/zBpiriJeT05TcfuQ==
-init:
-  - ps: iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/appveyor/ci/master/scripts/enable-rdp.ps1'))
+#init:
+#  - ps: iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/appveyor/ci/master/scripts/enable-rdp.ps1'))
 before_build:
 - cmd: dotnet restore GradeBook.sln
 - ps: echo $env:TESTING
@@ -47,6 +47,9 @@ on_success:
   - git branch
   - git checkout -b testb
   - git push -u origin --all
+
+on_finish:
+  - ps: $blockRdp = $true; iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/appveyor/ci/master/scripts/enable-rdp.ps1'))
 
 #on_success:
 #  # Switch branches to gh-pages, clean the folder, copy everything in from the Wyam output, and commit/push
