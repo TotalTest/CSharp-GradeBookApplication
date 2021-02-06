@@ -1,5 +1,5 @@
-$ErrorActionPreference = "Stop";
-#$env:GIT_REDIRECT_STDERR = '2>&1'
+#$ErrorActionPreference = "Stop";
+$env:GIT_REDIRECT_STDERR = '2>&1'
 git config --global user.email "prab@totaltestltd.co.uk"
 git config --global user.name "Prab"
 #git clone https://prab:$($env:git_creds)@totaltestltd.visualstudio.com/SampleProject/_git/SampleProject C:\projects\atata
@@ -11,6 +11,8 @@ git branch
 git checkout -b testh
 git push -u origin testh
 #git push --set-upstream origin testg
+
+echo $LASTEXITCODE
 
 #$urlvsts = "https://dev.azure.com/totaltestltd/Total%20Test/_apis/build/builds?api-version=6.1-preview.6"
 #$token = "7zoj7msfjzews5kkjrwd3gu65i4ldvqmnr3d34tfrtvpvhqo7xqq"
