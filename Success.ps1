@@ -6,8 +6,9 @@ git remote remove origin
 git remote add origin https://prab:$($env:git_creds)@totaltestltd.visualstudio.com/SampleProject/_git/SampleProject
 cd C:\projects\atata
 git branch
-git checkout -b testg
-git push --set-upstream origin testg
+git checkout -b testh
+git push -u origin testh
+#git push --set-upstream origin testg
 
 
 #$urlvsts = "https://dev.azure.com/totaltestltd/Total%20Test/_apis/build/builds?api-version=6.1-preview.6"
