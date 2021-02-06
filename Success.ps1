@@ -1,19 +1,18 @@
-#$ErrorActionPreference = "Stop";
 $env:GIT_REDIRECT_STDERR = '2>&1'
+Set-Content -Path "$HOME\.git-credentials" -Value "https://prab:$($env:git_creds)@totaltestltd.visualstudio.com/`n" -NoNewline
 git config --global user.email "prab@totaltestltd.co.uk"
 git config --global user.name "Prab"
-git clone https://prab:$($env:git_creds)@totaltestltd.visualstudio.com/SampleProject/_git/SampleProject C:\projects\atata
+#git clone https://prab:$($env:git_creds)@totaltestltd.visualstudio.com/SampleProject/_git/SampleProject C:\projects\atata
+git clone https://totaltestltd@dev.azure.com/totaltestltd/SampleProject/_git/SampleProject C:\projects\atata
 git remote remove origin
-#git remote add origin https://prab:$($env:git_creds)@totaltestltd.visualstudio.com/SampleProject/_git/SampleProject
 git remote add origin https://totaltestltd@dev.azure.com/totaltestltd/SampleProject/_git/SampleProject
 cd C:\projects\atata
 git branch
 git checkout -b testi
 git push -u origin testi
-#git push --set-upstream origin testg
 
 if ($LASTEXITCODE -ne 0)  { 
-       Write-Host -ForegroundColor Yellow 'lastexitcode=' $LASTEXITCODE;
+       Write-Host -ForegroundColor Yellow 'LASTEXITCODE=' $LASTEXITCODE;
        exit $LASTEXITCODE 
   }
 
