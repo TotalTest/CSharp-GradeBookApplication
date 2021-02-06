@@ -19,6 +19,8 @@ environment:
   TESTINGER: tester
   access_token:
     secure: MNPrU99QrEVtD3Oj7qxhgYDeT/Nq+RKs/LBq6PK3R1vGx//ZjUxqDTFBxYyq3LbzGIzzr/zBpiriJeT05TcfuQ==
+  git_creds:
+    secure: k//V1YrwDDDjpqNU5VzIyq6sXKM07WDJiFGVwRZkuhVgK1VU9HNkzDGsq5CCuYK7y/gCkUhv7JiBZvbrMrgnMg==
 #init:
 #  - ps: iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/appveyor/ci/master/scripts/enable-rdp.ps1'))
 before_build:
@@ -37,21 +39,21 @@ build:
 
 on_success:
   #- git config --global credential.helper store
-  #- ps: Set-Content -Path "$HOME\.git-credentials" -Value "https://prab:7trxj56ue2mugyt3gyvs6nmf27x33mhdubgg3fs6tdinnntbua3a@totaltestltd.visualstudio.com/`n" -NoNewline
+  #- ps: Set-Content -Path "$HOME\.git-credentials" -Value "https://prab:$env:git_creds@totaltestltd.visualstudio.com/`n" -NoNewline
   - git config --global user.email "prab@totaltestltd.co.uk"
   - git config --global user.name "Prab"
   #- git remote remove origin
-  #- git remote add origin https://prab:7trxj56ue2mugyt3gyvs6nmf27x33mhdubgg3fs6tdinnntbua3a@totaltestltd.visualstudio.com/SampleProject/_git/SampleProject
+  #- git remote add origin https://prab:$env:git_creds@totaltestltd.visualstudio.com/SampleProject/_git/SampleProject
   #- git clone https://totaltestltd@dev.azure.com/totaltestltd/SampleProject/_git/SampleProject C:\projects\atata
   #- git clone https://($env:access_token)@dev.azure.com/totaltestltd/SampleProject/_git/SampleProject C:\projects\atata
-  - git clone https://prab:7trxj56ue2mugyt3gyvs6nmf27x33mhdubgg3fs6tdinnntbua3a@totaltestltd.visualstudio.com/SampleProject/_git/SampleProject C:\projects\atata
+  - git clone https://prab:$env:git_creds@totaltestltd.visualstudio.com/SampleProject/_git/SampleProject C:\projects\atata
   - git remote remove origin
-  - git remote add origin https://prab:7trxj56ue2mugyt3gyvs6nmf27x33mhdubgg3fs6tdinnntbua3a@totaltestltd.visualstudio.com/SampleProject/_git/SampleProject
+  - git remote add origin https://prab:$env:git_creds@totaltestltd.visualstudio.com/SampleProject/_git/SampleProject
   - cd C:\projects\atata
   - git branch
-  - git checkout -b testc
+  - git checkout -b testd
   #- git push -u origin --all
-  - git push --set-upstream origin testc
+  - git push --set-upstream origin testd
 
 #on_finish:
 #  - ps: $blockRdp = $true; iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/appveyor/ci/master/scripts/enable-rdp.ps1'))
