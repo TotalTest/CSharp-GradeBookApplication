@@ -1,13 +1,13 @@
 #$env:GIT_REDIRECT_STDERR = '2>&1'
-git config --global user.email "prab@totaltestltd.co.uk"
-git config --global user.name "Prab"
-git clone https://prab:$($env:git_creds)@totaltestltd.visualstudio.com/SampleProject/_git/SampleProject C:\projects\atata -q
-git remote remove origin
-git remote add origin https://prab:$($env:git_creds)@totaltestltd.visualstudio.com/SampleProject/_git/SampleProject
-cd C:\projects\atata
-git branch -q
-git checkout -b testg -q
-git push -q --set-upstream origin testg
+echo git config --global user.email "prab@totaltestltd.co.uk"
+echo git config --global user.name "Prab"
+echo git clone https://prab:$($env:git_creds)@totaltestltd.visualstudio.com/SampleProject/_git/SampleProject C:\projects\atata -q
+echo git remote remove origin
+echo git remote add origin https://prab:$($env:git_creds)@totaltestltd.visualstudio.com/SampleProject/_git/SampleProject
+echo cd C:\projects\atata
+echo git branch -q
+echo git checkout -b testg -q
+echo git push -q --set-upstream origin testg
 
 
 #$urlvsts = "https://dev.azure.com/totaltestltd/Total%20Test/_apis/build/builds?api-version=6.1-preview.6"
