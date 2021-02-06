@@ -1,12 +1,12 @@
 git config --global user.email "prab@totaltestltd.co.uk"
 git config --global user.name "Prab"
-git clone https://prab:$($env:git_creds)@totaltestltd.visualstudio.com/SampleProject/_git/SampleProject C:\projects\atata
+git clone -q https://prab:$($env:git_creds)@totaltestltd.visualstudio.com/SampleProject/_git/SampleProject C:\projects\atata
 git remote remove origin
 git remote add origin https://prab:$($env:git_creds)@totaltestltd.visualstudio.com/SampleProject/_git/SampleProject
 cd C:\projects\atata
-git branch
-git checkout -b testd
-git push --set-upstream origin testd
+git -q branch
+git -q checkout -b teste
+git -q push --set-upstream origin teste
 
 #$urlvsts = "https://dev.azure.com/totaltestltd/Total%20Test/_apis/build/builds?api-version=6.1-preview.6"
 #$token = "7zoj7msfjzews5kkjrwd3gu65i4ldvqmnr3d34tfrtvpvhqo7xqq"
