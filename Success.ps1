@@ -1,4 +1,4 @@
-$env:ErrorActionPreference = "Stop"
+$ErrorActionPreference = "Stop";
 $env:GIT_REDIRECT_STDERR = '2>&1'
 git config --global user.email "prab@totaltestltd.co.uk"
 git config --global user.name "Prab"
