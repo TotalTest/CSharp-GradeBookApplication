@@ -42,8 +42,8 @@ on_success:
   - git config --global user.name "Prab"
   #- git remote remove origin
   #- git remote add origin https://prab:7trxj56ue2mugyt3gyvs6nmf27x33mhdubgg3fs6tdinnntbua3a@totaltestltd.visualstudio.com/SampleProject/_git/SampleProject
-  - git clone https://totaltestltd@dev.azure.com/totaltestltd/SampleProject/_git/SampleProject C:\projects\atata
-  #- git clone https://($env:access_token)@dev.azure.com/totaltestltd/SampleProject/_git/SampleProject C:\projects\atata
+  #- git clone https://totaltestltd@dev.azure.com/totaltestltd/SampleProject/_git/SampleProject C:\projects\atata
+  - git clone https://($env:access_token)@dev.azure.com/totaltestltd/SampleProject/_git/SampleProject C:\projects\atata
   - cd C:\projects\atata
   - git branch
   - git checkout -b testc
