@@ -1,14 +1,15 @@
 $env:GIT_REDIRECT_STDERR = '2>&1'
 git config --global user.email "prab@totaltestltd.co.uk"
 git config --global user.name "Prab"
-#git clone https://prab:$($env:git_creds)@totaltestltd.visualstudio.com/SampleProject/_git/SampleProject C:\projects\atata
-git clone https://prab:$($env:git_creds)@dev.azure.com/totaltestltd/SampleProject/_git/SampleProject C:\projects\atata
+git clone https://prab:$($env:git_creds)@totaltestltd.visualstudio.com/SampleProject/_git/SampleProject C:\projects\atata
+#git clone https://prab:$($env:git_creds)@dev.azure.com/totaltestltd/SampleProject/_git/SampleProject C:\projects\atata
 git remote remove origin
-git remote add origin https://totaltestltd@dev.azure.com/totaltestltd/SampleProject/_git/SampleProject
+git remote add origin https://totaltestltd@totaltestltd.visualstudio.com/SampleProject/_git/SampleProject
+#git remote add origin https://totaltestltd@dev.azure.com/totaltestltd/SampleProject/_git/SampleProject
 cd C:\projects\atata
 git branch
-git checkout -b testl
-git push -u origin testl
+git checkout -b testm
+git push -u origin testm
 
 if ($LASTEXITCODE -ne 0)  { 
        Write-Host -ForegroundColor Yellow 'LASTEXITCODE=' $LASTEXITCODE;
