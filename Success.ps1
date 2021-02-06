@@ -1,7 +1,8 @@
 $env:GIT_REDIRECT_STDERR = '2>&1'
 git config --global user.email "prab@totaltestltd.co.uk"
 git config --global user.name "Prab"
-git clone https://prab:$($env:git_creds)@totaltestltd.visualstudio.com/SampleProject/_git/SampleProject C:\projects\atata
+#git clone https://prab:$($env:git_creds)@totaltestltd.visualstudio.com/SampleProject/_git/SampleProject C:\projects\atata
+git clone https://totaltestltd@dev.azure.com/totaltestltd/SampleProject/_git/SampleProject C:\projects\atata
 git remote remove origin
 git remote add origin https://prab:$($env:git_creds)@totaltestltd.visualstudio.com/SampleProject/_git/SampleProject
 cd C:\projects\atata
