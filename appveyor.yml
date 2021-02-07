@@ -50,8 +50,8 @@ on_success:
   ##- git push -u origin --all
   #- git push --set-upstream origin testd
 
-#on_finish:
-#  - ps: $blockRdp = $true; iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/appveyor/ci/master/scripts/enable-rdp.ps1'))
+on_finish:
+  - ps: $blockRdp = $true; iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/appveyor/ci/master/scripts/enable-rdp.ps1'))
 
 #on_success:
 #  # Switch branches to gh-pages, clean the folder, copy everything in from the Wyam output, and commit/push
