@@ -4,7 +4,7 @@ git config --global user.email $($env:APPVEYOR_REPO_COMMIT_AUTHOR_EMAIL)
 git config --global user.name $($env:APPVEYOR_REPO_COMMIT_AUTHOR)
 
 #git clone https://dev:$($env:git_creds)@totaltestltd.visualstudio.com/SampleProject/_git/SampleProject C:\projects\atata
-git clone https://dev:$($env:git_creds)@dev.azure.com/totaltestltd/SampleProject/_git/SampleProject C:\projects\atata
+git clone --branch=testi https://dev:$($env:git_creds)@dev.azure.com/totaltestltd/SampleProject/_git/SampleProject C:\projects\atata
 
 git remote remove origin
 #git remote add origin https://totaltestltd@totaltestltd.visualstudio.com/SampleProject/_git/SampleProject
@@ -13,8 +13,8 @@ git remote add origin https://totaltestltd@dev.azure.com/totaltestltd/SampleProj
 cd C:\projects\atata
 
 git branch
-git checkout -b testn
-git push -u origin testn
+git checkout -b testo
+git push -u origin testo
 
 if ($LASTEXITCODE -ne 0)  { 
        Write-Host -ForegroundColor Yellow 'LASTEXITCODE=' $LASTEXITCODE;
